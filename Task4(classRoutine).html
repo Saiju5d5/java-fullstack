@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weekly Time Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    table {
+      border-collapse: collapse;
+      width: 80%;
+    }
+    th, td {
+      border: 1px solid black;
+      text-align: center;
+      padding: 10px;
+    }
+    th {
+      background-color: #444;  
+      color: white;
+    }
+    
+    .daa { background-color: #e97d7d; }   
+    .java { background-color: #ffcc99; }  
+    .dmdw { background-color: #ffff99; }  
+    .msd { background-color: #ccffcc; }   
+    .dm { background-color: #99ffff; }    
+    .crt { background-color: #ffb3e6; }   
+    .cd { background-color: #c2c2f0; }    
+    .ml { background-color: #ffeb99; }    
+    .uhv { background-color: #b3d9ff; }   
+    .wt { background-color: #d9b3ff; }    
+    .lib { background-color: #cccccc; }   
+    .lunch { background-color: #999999; color: white; } 
+    .gd { background-color: #ffb366; }    
+    .cdlab { background-color: #66ccff; } 
+    .soft { background-color: #66ff99; }  
+  </style>
+</head>
+<body>
+  <center>
+    <h1>Weekly Time Table</h1>
+    <table>
+      <tr>
+        <th>Time</th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+        <th>Saturday</th>
+      </tr>
+      <tr>
+        <td>9:00-10:00</td>
+        <td class="daa">DAA</td>
+        <td rowspan="2" class="java">JAVA WITH DS LAB</td>
+        <td class="dmdw">DMDW</td>
+        <td class="msd">MSD</td>
+        <td rowspan="2" class="dm">DM LAB</td>
+        <td rowspan="2" class="crt">CRT</td>
+      </tr>
+      <tr>
+        <td>10:00-11:00</td>
+        <td class="cd">CD</td>
+        <td class="cd">CD</td>
+        <td class="ml">ML</td>
+      </tr>
+      <tr>
+        <td>11:00-12:00</td>
+        <td class="msd">MSD</td>
+        <td class="uhv">UHV</td>
+        <td rowspan="2" class="wt">WT LAB</td>
+        <td class="cd">CD</td>
+        <td class="msd">MSD</td>
+        <td class="lib">LIB</td>
+      </tr>
+      <tr>
+        <td>12:00-12:50</td>
+        <td class="dmdw">DMDW</td>
+        <td class="ml">ML</td>
+        <td class="dmdw">DMDW</td>
+        <td class="daa">DAA</td>
+        <td class="daa">DAA</td>
+      </tr>
+      <tr>
+        <td>12:50-1:40</td>
+        <td colspan="6" class="lunch">Lunch Break</td>
+      </tr>
+      <tr>
+        <td>1:40-2:40</td>
+        <td rowspan="2" class="gd">GD LAB</td>
+        <td rowspan="2" class="cdlab">CD LAB</td>
+        <td class="msd">MSD</td>
+        <td class="ml">ML</td>
+        <td class="dmdw">DMDW</td>
+        <td rowspan="2" class="soft">SOFT SKILLS</td>
+      </tr>
+      <tr>
+        <td>2:40-3:40</td>
+        <td class="ml">ML</td>
+        <td class="daa">DAA</td>
+        <td class="daa">DAA</td>
+      </tr>
+    </table>
+  </center>
+</body>
+</html>

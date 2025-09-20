@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Nav Bar</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    body{
+        background: white;
+        color: black;
+    }
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 60px;
+        background: #f8fbfa;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    header .logo{
+        font-size:25px;
+        font-weight: bold;
+    }
+    nav ul{
+        display: flex;
+
+        list-style: none;
+    }
+    nav ul li {
+      margin: 3px;
+    }
+    nav ul li a{
+        text-decoration: none;
+        padding: 6px 12px;
+        color: black;
+        font-weight: 500;
+        border-radius: 5px;
+    }
+    nav ul li a.active,
+    nav ul li a:hover {
+      background:#04d3ef;
+      color: #0b0a0a;
+    }
+    .hero {
+    background: url(https://images.unsplash.com/photo-1664269424050-ca3471798157?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat center center/cover;
+    height: 75vh;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: space-evenly; 
+    text-align: center;
+    padding: 20px;
+    font-size: larger;
+    
+}
+ .hero h1 {
+      /* font-size: rem; */
+      font-weight: bold;
+      background-color: #dde2e7;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+
+.hero button {
+    background: rgb(16, 10, 10);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 16px; /* Optional: add spacing from bottom */
+}
+.hero button:hover{
+    background: #09c8d5;
+    color: black;
+}
+.container {
+    display: flex;
+      justify-content: space-around;
+      margin-top: 30px;
+}
+.tool{
+      background: #f9f9f9;
+      padding: 45px;
+      border-radius: 8px;
+      width: 28%;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .tool{
+      margin-bottom: 15px;
+      color: #020609;
+    }
+    .tool:hover{
+        background: #09c8d5;
+        transition: 0.3s;
+        transform: scale(1.1);
+    }
+</style>
+<body>
+    <header>
+        <div class="logo">GreekGods</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a> </li>
+                <li><a href="#">Gods</a> </li>
+                <li><a href="#">Battle</a> </li>
+                <li><a href="#">Summon Us</a> </li>
+                <li><a href="#" class="active">Join Us</a> </li>
+
+            </ul>
+            </nav>
+    </header>
+    <section>
+        <div class="hero">
+            <h1>Start learning with<br>GrowMore</h1>
+            <button onclick="#">Get Started</button>
+        </div>
+    </section>
+    <section>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <div class="container">
+            <div class="tool">
+                <i class="fas fa-cogs fa-3x"></i>
+                <p>Customizable Tools</p>
+            </div>
+            <div class="tool">
+                <i class="fas fa-lightbulb fa-3x"></i>
+                <p>Innovative solutions</p>
+            </div>
+            <div class="tool">
+                <i class="fas fa-shield-alt fa-3x"></i>
+                <p>Secure Platform</p>
+            </div>
+            <div class="tool">
+                <i class="fas fa-comments fa-3x"></i>
+                <p>24/7 Support</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Job Application / Registration & Login Forms</title>
+  <style>
+    :root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto, "Helvetica Neue", Arial;}
+    body{max-width:900px;margin:40px auto;padding:20px;line-height:1.45;color:#111}
+    h1,h2{margin:0 0 12px}
+    form{border:1px solid #e3e3e3;padding:18px;border-radius:8px;margin-bottom:24px;background:#fafafa}
+    .row{display:flex;gap:12px;flex-wrap:wrap}
+    .field{flex:1 1 220px;display:flex;flex-direction:column;margin-bottom:12px}
+    label{font-weight:600;margin-bottom:6px}
+    input,button,select,textarea{padding:10px;border:1px solid #ccc;border-radius:6px;font-size:14px}
+    .actions{display:flex;gap:10px;align-items:center}
+    .helper{font-size:12px;color:#555}
+    .error{color:#b00020;font-size:13px}
+    .success{color:green}
+  </style>
+</head>
+<body>
+  <h1>Job Application Form</h1>
+  <form id="jobForm" novalidate>
+    <div class="row">
+      <div class="field">
+        <label for="fullName">Full Name *</label>
+        <input id="fullName" name="fullName" type="text" placeholder="Your full name" required aria-required="true">
+      </div>
+
+      <div class="field">
+        <label for="age">Age (18-60) *</label>
+        <input id="age" name="age" type="number" min="18" max="60" required aria-required="true" placeholder="18">
+      </div>
+
+      <div class="field">
+        <label for="dob">Date of Birth *</label>
+        <input id="dob" name="dob" type="date" required>
+      </div>
+
+      <div class="field">
+        <label for="preferredTime">Preferred Interview Time</label>
+        <input id="preferredTime" name="preferredTime" type="time">
+      </div>
+
+      <div class="field">
+        <label for="favColor">Favorite Color</label>
+        <input id="favColor" name="favColor" type="color" value="#2b8cff">
+      </div>
+
+      <div class="field">
+        <label for="phone">Phone Number *</label>
+        <!-- pattern: accepts international + and digits, 7-15 digits total -->
+        <input id="phone" name="phone" type="tel" placeholder="+911234567890" required pattern="^\+?[0-9]{7,15}$" title="Enter country code + number or just digits (7-15 digits).">
+        <span class="helper">Format: +911234567890 or 0123456789</span>
+      </div>
+
+      <div class="field">
+        <label for="portfolio">Portfolio URL</label>
+        <input id="portfolio" name="portfolio" type="url" placeholder="https://your-portfolio.example">
+      </div>
+
+      <div class="field">
+        <label for="resume">Resume (PDF / DOC / DOCX) *</label>
+        <input id="resume" name="resume" type="file" accept=".pdf,application/pdf,.doc,application/msword,.docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required>
+        <span id="resumeName" class="helper"></span>
+      </div>
+
+      <div class="field" style="flex-basis:100%">
+        <label for="cover">Cover Letter (optional)</label>
+        <textarea id="cover" name="cover" rows="4" placeholder="Short cover note... (optional)"></textarea>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button type="submit">Submit Application</button>
+      <button type="reset">Reset</button>
+      <div id="jobMsg" role="status" aria-live="polite"></div>
+    </div>
+  </form>
+
+  <h2>Registration Form</h2>
+  <form id="regForm" novalidate>
+    <div class="row">
+      <div class="field">
+        <label for="regName">Full Name *</label>
+        <input id="regName" name="regName" type="text" required>
+      </div>
+
+      <div class="field">
+        <label for="regEmail">Email *</label>
+        <input id="regEmail" name="regEmail" type="email" required>
+      </div>
+
+      <div class="field">
+        <label for="regUsername">Username *</label>
+        <input id="regUsername" name="regUsername" type="text" required pattern="^[A-Za-z0-9_\-]{3,20}$" title="3-20 characters: letters, numbers, underscore or hyphen">
+      </div>
+
+      <div class="field">
+        <label for="regPassword">Password *</label>
+        <input id="regPassword" name="regPassword" type="password" required minlength="8" placeholder="Min 8 characters">
+      </div>
+
+      <div class="field">
+        <label for="regConfirm">Confirm Password *</label>
+        <input id="regConfirm" name="regConfirm" type="password" required minlength="8">
+      </div>
+
+      <div class="field" style="flex-basis:100%">
+        <label for="regPhone">Phone (optional)</label>
+        <input id="regPhone" name="regPhone" type="tel" pattern="^\+?[0-9]{7,15}$" title="Optional: +countrycode and digits">
+      </div>
+    </div>
+
+    <div class="actions">
+      <button type="submit">Register</button>
+      <button type="reset">Reset</button>
+      <div id="regMsg" role="status" aria-live="polite"></div>
+    </div>
+  </form>
+
+  <h2>Login Form</h2>
+  <form id="loginForm" novalidate>
+    <div class="row">
+      <div class="field">
+        <label for="loginUser">Email or Username *</label>
+        <input id="loginUser" name="loginUser" type="text" required>
+      </div>
+
+      <div class="field">
+        <label for="loginPass">Password *</label>
+        <input id="loginPass" name="loginPass" type="password" required>
+      </div>
+
+      <div class="field" style="align-self:center;flex-basis:100px;">
+        <label><input id="remember" name="remember" type="checkbox"> Remember me</label>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button type="submit">Login</button>
+      <button type="reset">Reset</button>
+      <div id="loginMsg" role="status" aria-live="polite"></div>
+    </div>
+  </form>
+
+  <script>
+    // Resume filename preview
+    document.getElementById('resume').addEventListener('change', function(e){
+      const f = e.target.files[0];
+      document.getElementById('resumeName').textContent = f ? `Selected: ${f.name} (${Math.round(f.size/1024)} KB)` : '';
+    });
+
+    // Basic client-side validation & messages
+    function showMessage(elId, msg, isError){
+      const el = document.getElementById(elId);
+      el.textContent = msg;
+      el.className = isError ? 'error' : 'success';
+    }
+
+    // Job form submit
+    document.getElementById('jobForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const form = e.target;
+      if(!form.checkValidity()){
+        showMessage('jobMsg','Please correct the highlighted fields.', true);
+        form.reportValidity();
+        return;
+      }
+      // Example: gather data (in real app send via fetch to server)
+      showMessage('jobMsg','Application submitted successfully (demo).', false);
+      // Keep form for demo; in production you might clear it after success.
+    });
+
+    // Registration: ensure passwords match
+    document.getElementById('regForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const pass = document.getElementById('regPassword');
+      const conf = document.getElementById('regConfirm');
+      if(pass.value !== conf.value){
+        showMessage('regMsg','Passwords do not match.', true);
+        return;
+      }
+      if(!e.target.checkValidity()){
+        showMessage('regMsg','Please fix validation errors.', true);
+        e.target.reportValidity();
+        return;
+      }
+      showMessage('regMsg','Registered successfully (demo).', false);
+    });
+
+    // Login form demo
+    document.getElementById('loginForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      if(!e.target.checkValidity()){ e.target.reportValidity(); showMessage('loginMsg','Fix errors.', true); return; }
+      showMessage('loginMsg','Logged in (demo).', false);
+    });
+
+  </script>
+</body>
+</html>
