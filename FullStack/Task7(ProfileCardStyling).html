@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Selectors Practice</title>
+  <style>
+    /* Task 1: Universal selector for margin & padding reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Task 1: Profile Card Styling */
+    #profile-card {
+      width: 300px;
+      padding: 20px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      text-align: center;
+      background-color: #f5f5f5;
+      margin-bottom: 40px;
+    }
+
+    .card-title {
+      color: #2c3e50;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    /* Task 2: Nested & Descendant Selectors */
+    .container section {
+      background-color: #e0f7fa;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+    }
+
+    .container section h3 {
+      color: #00796b;
+      margin-bottom: 10px;
+    }
+
+    /* Task 3: Child, Adjacent Sibling & General Sibling Selectors */
+    ul {
+      list-style-type: disc;
+      margin-bottom: 40px;
+    }
+
+    ul > li:first-child {
+      color: red; /* First child styling */
+      font-weight: bold;
+    }
+
+    ul > li + li {
+      color: green; /* Adjacent sibling styling */
+    }
+
+    ul > li ~ li {
+      font-style: italic; /* General sibling styling */
+    }
+
+    /* Task 4: Grouping & Styling Multiple Elements */
+    h1, h2, h3 {
+      color: #34495e;
+      font-family: 'Verdana', sans-serif;
+    }
+
+    p {
+      color: #666;
+      line-height: 1.6;
+    }
+
+    body {
+      padding: 20px;
+    }
+
+    hr {
+      margin: 40px 0;
+      border: none;
+      border-top: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Task 1: Profile Card -->
+  <div id="profile-card">
+    <h2 class="card-title">Raghab</h2>
+    <p>Web Developer & Designer</p>
+    <button>Contact</button>
+  </div>
+
+  <hr>
+
+  <!-- Task 2: Nested & Descendant Selector Layout -->
+  <div class="container">
+    <section>
+      <h3>Section 1</h3>
+      <p>This is the first section inside the container.</p>
+    </section>
+    <section>
+      <h3>Section 2</h3>
+      <p>This is the second section inside the container.</p>
+    </section>
+    <section>
+      <h3>Section 3</h3>
+      <p>This is the third section inside the container.</p>
+    </section>
+  </div>
+
+  <hr>
+
+  <!-- Task 3: Child, Adjacent Sibling & General Sibling Styling -->
+  <ul>
+    <li>Item 1 (First Child)</li>
+    <li>Item 2 (Adjacent Sibling)</li>
+    <li>Item 3 (General Sibling)</li>
+    <li>Item 4 (General Sibling)</li>
+  </ul>
+
+  <hr>
+
+  <!-- Task 4: Grouping & Styling Multiple Elements -->
+  <h1>Main Heading</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+  <h2>Subheading</h2>
+  <p>Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio.</p>
+
+  <h3>Sub-subheading</h3>
+  <p>Vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est.</p>
+
+</body>
+</html>

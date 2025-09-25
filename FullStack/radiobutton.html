@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Radio Button Example</title>
+</head>
+<body>
+  <h2>Select Your Course</h2>
+
+  <form id="courseForm">
+    <label>
+      <input type="radio" name="course" value="Java"> Java
+    </label><br>
+    <label>
+      <input type="radio" name="course" value="HTML"> HTML
+    </label><br>
+    <label>
+      <input type="radio" name="course" value="CSS"> CSS
+    </label><br>
+    <label>
+      <input type="radio" name="course" value="Android"> Android
+    </label><br><br>
+
+    <button type="button" onclick="showSelection()">Show Selected Course</button>
+    <button type="button" onclick="showTotalCourses()">Show Total Courses</button>
+  </form>
+
+  <p id="result"></p>
+  <p id="total"></p>
+
+  <script>
+    // Show selected course
+    function showSelection() {
+      const selected = document.querySelector('input[name="course"]:checked');
+      if (selected) {
+        document.getElementById("result").innerText = "You selected: " + selected.value;
+      } else {
+        document.getElementById("result").innerText = "Please select a course!";
+      }
+    }
+
+    // Show total number of courses
+    function showTotalCourses() {
+      const courses = document.querySelectorAll('input[name="course"]');
+      document.getElementById("total").innerText = "Total courses: " + courses.length;
+    }
+  </script>
+</body>
+</html>

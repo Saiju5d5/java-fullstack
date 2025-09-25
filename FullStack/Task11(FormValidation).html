@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        h2 {
+            margin-bottom: 15px;
+        }
+        input, select {
+            display: block;
+            margin: 10px 0;
+            padding: 8px;
+        }
+        label {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Task 1: Password Validation -->
+    <section>
+        <h2>Task 1: Password Validation</h2>
+        <input type="password" id="password" placeholder="Enter Password">
+        <input type="password" id="confirmPassword" placeholder="Confirm Password">
+        <button onclick="validatePassword()">Register</button>
+    </section>
+
+    <!-- Task 2: Newsletter Subscription -->
+    <section>
+        <h2>Task 2: Newsletter Subscription</h2>
+        <input type="email" id="email" placeholder="Enter Email">
+        <label>
+            <input type="checkbox" id="subscribeCheckbox"> Subscribe to Newsletter
+        </label>
+        <button onclick="subscribeNewsletter()">Submit</button>
+    </section>
+
+    <!-- Task 3: Payment Method Selection -->
+    <section>
+        <h2>Task 3: Payment Method Selection</h2>
+        <label><input type="radio" name="payment" value="Credit Card"> Credit Card</label>
+        <label><input type="radio" name="payment" value="Debit Card"> Debit Card</label>
+        <label><input type="radio" name="payment" value="UPI"> UPI</label>
+        <label><input type="radio" name="payment" value="Net Banking"> Net Banking</label>
+        <button onclick="validatePayment()">Pay Now</button>
+    </section>
+
+    <!-- Task 4: Country and State Selection -->
+    <section>
+        <h2>Task 4: Country and State Selection</h2>
+        <select id="country">
+            <option value="">Select Country</option>
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+            <option value="UK">UK</option>
+        </select>
+
+        <select id="state">
+            <option value="">Select State</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Karnataka">Karnataka</option>
+        </select>
+
+        <button onclick="validateCountryState()">Submit</button>
+    </section>
+
+    <!-- Task 5: Food Order Selection -->
+    <section>
+        <h2>Task 5: Food Order Selection</h2>
+        <label><input type="checkbox" name="food" value="Pizza"> Pizza</label>
+        <label><input type="checkbox" name="food" value="Burger"> Burger</label>
+        <label><input type="checkbox" name="food" value="Sandwich"> Sandwich</label>
+        <label><input type="checkbox" name="food" value="Pasta"> Pasta</label>
+        <button onclick="validateFoodOrder()">Order Now</button>
+    </section>
+
+    <script>
+        // Task 1: Password Validation
+        function validatePassword() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            if (!password || !confirmPassword) {
+                alert("Please fill both fields!");
+            } else if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+            } else {
+                alert("Password confirmed successfully!");
+            }
+        }
+
+        // Task 2: Newsletter Subscription
+        function subscribeNewsletter() {
+            const email = document.getElementById('email').value;
+            const isChecked = document.getElementById('subscribeCheckbox').checked;
+            if (!isChecked) {
+                alert("Please check the subscription box!");
+            } else if (!email.includes("@")) {
+                alert("Please enter a valid email!");
+            } else {
+                alert(`Thank you for subscribing with ${email}`);
+            }
+        }
+
+        // Task 3: Payment Method Selection
+        function validatePayment() {
+            const paymentMethods = document.getElementsByName('payment');
+            let selectedMethod = "";
+            for (const method of paymentMethods) {
+                if (method.checked) {
+                    selectedMethod = method.value;
+                    break;
+                }
+            }
+            if (!selectedMethod) {
+                alert("Please select a payment method!");
+            } else {
+                alert(`You selected payment method: ${selectedMethod}`);
+            }
+        }
+
+        // Task 4: Country and State Selection
+        function validateCountryState() {
+            const country = document.getElementById('country').value;
+            const state = document.getElementById('state').value;
+            if (!country || !state) {
+                alert("Please select both country and state!");
+            } else {
+                alert(`You selected ${state}, ${country}`);
+            }
+        }
+
+        // Task 5: Food Order Selectionl
+        function validateFoodOrder() {
+            const foodItems = document.getElementsByName('food');
+            const selectedItems = [];
+            for (const item of foodItems) {
+                if (item.checked) {
+                    selectedItems.push(item.value);
+                }
+            }
+            if (selectedItems.length === 0) {
+                alert("Please select at least one food item!");
+            } else {
+                alert(`You ordered: ${selectedItems.join(", ")}`);
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
